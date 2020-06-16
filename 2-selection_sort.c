@@ -25,6 +25,8 @@ void selection_sort(int *array, size_t size)
 {
 	unsigned int i, j, k;
 
+	if (array == NULL || size <= 0)
+		return;
 	for (i = 0; i < size - 1; i++)
 	{
 		k = i;
@@ -33,7 +35,10 @@ void selection_sort(int *array, size_t size)
 			if (array[j] < array[k])
 				k = j;
 		}
-		swap(&array[k], &array[i]);
-		print_array(array, size);
+		if (k != i)
+		{
+			swap(&array[k], &array[i]);
+			print_array(array, size);
+		}
 	}
 }
