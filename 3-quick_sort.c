@@ -24,7 +24,7 @@ void swap(int *n1, int *n2)
  * Return: integer
  */
 
-ssize_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
+ssize_t partition(int *array, ssize_t low, ssize_t high, size_t size)
 {
 	int pivot = array[high];
 	ssize_t p = (low - 1);
@@ -64,7 +64,7 @@ void quicksort(int *array, ssize_t low, ssize_t high, size_t size)
 
 	if (low < high)
 	{
-		p = lomuto_partition(array, low, high, size);
+		p = partition(array, low, high, size);
 		quicksort(array, low, p - 1, size);
 		quicksort(array, p + 1, high, size);
 	}
