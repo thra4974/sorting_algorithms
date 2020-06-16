@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 /** Data Structs **/
 
@@ -33,7 +32,7 @@ void quick_sort(int *array, size_t size);
 void swap(int *n1, int *n2);
 void sort_insert(listint_t **list, listint_t *new);
 listint_t *create_node(int n);
-ssize_t partition(int *array, ssize_t low, ssize_t high, size_t size);
+ssize_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size);
 void quicksort(int *array, ssize_t low, ssize_t high, size_t size);
 
 #endif
